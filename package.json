@@ -1,7 +1,7 @@
 {
-  "homepage": "https://rebeplays.github.io/holiday-countdown",
   "name": "holiday-countdown",
   "version": "0.1.0",
+  "homepage": "https://rebeplays.github.io/holiday-countdown",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
