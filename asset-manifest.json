@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/countdown/static/css/main.d0ace48a.css",
-    "main.js": "/countdown/static/js/main.595ab3c1.js",
-    "static/js/453.a26adf0e.chunk.js": "/countdown/static/js/453.a26adf0e.chunk.js",
-    "index.html": "/countdown/index.html",
-    "main.d0ace48a.css.map": "/countdown/static/css/main.d0ace48a.css.map",
-    "main.595ab3c1.js.map": "/countdown/static/js/main.595ab3c1.js.map",
-    "453.a26adf0e.chunk.js.map": "/countdown/static/js/453.a26adf0e.chunk.js.map"
+    "main.css": "/holiday-countdown/static/css/main.d0ace48a.css",
+    "main.js": "/holiday-countdown/static/js/main.baf88068.js",
+    "static/js/453.a26adf0e.chunk.js": "/holiday-countdown/static/js/453.a26adf0e.chunk.js",
+    "index.html": "/holiday-countdown/index.html",
+    "main.d0ace48a.css.map": "/holiday-countdown/static/css/main.d0ace48a.css.map",
+    "main.baf88068.js.map": "/holiday-countdown/static/js/main.baf88068.js.map",
+    "453.a26adf0e.chunk.js.map": "/holiday-countdown/static/js/453.a26adf0e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0ace48a.css",
-    "static/js/main.595ab3c1.js"
+    "static/js/main.baf88068.js"
   ]
 }
