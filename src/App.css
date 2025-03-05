@@ -1,38 +1,343 @@
-.App {
+/* General Container Styles
+/* General Container Styles */
+.holiday-countdown-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Holiday Selector Styles */
+.holiday-selector {
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.holiday-selector label {
+  margin-right: 10px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.holiday-selector select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Countdown Display Styles */
+.countdown-display {
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.holiday-name {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.countdown-unit {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.countdown-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.countdown-label {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* Gift Recommendations Styles */
+/* .gift-recommendations {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.recommendations-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gift-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gift-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gift-item-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gift-item-image:hover {
+  transform: scale(1.05);
+}
+
+.gift-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.gift-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.shop-now-button {
+  display: inline-block;
+  background-color: #007bff;
   color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.shop-now-button:hover {
+  background-color: #0056b3;
+} */
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  perspective: 1000px; /* Add 3D perspective for depth */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.gift-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  transform-style: preserve-3d;
+}
+
+.gift-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gift-item:hover::before {
+  opacity: 1;
+}
+
+.gift-item:hover {
+  transform: 
+    scale(1.05) 
+    rotateX(5deg) 
+    rotateY(-5deg);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gift-item-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateZ(20px); /* Create 3D effect */
+}
+
+.gift-item:hover .gift-item-image {
+  transform: 
+    scale(1.1) 
+    translateZ(40px) 
+    rotate(3deg);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gift-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+  color: #333;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease;
+}
+
+.gift-item:hover .gift-name {
+  color: #007bff;
+}
+
+.gift-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin: 10px 0;
+  text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gift-item:hover .gift-price {
+  transform: scale(1.1);
+  color: #2ecc71;
+}
+
+.shop-now-button {
+  display: inline-block;
+  position: relative;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+}
+
+.shop-now-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg, 
+    transparent, 
+    rgba(255,255,255,0.3), 
+    transparent
+  );
+  transition: all 0.5s ease;
+}
+
+.shop-now-button:hover::before {
+  left: 100%;
+}
+
+.shop-now-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ripple Effect for Button */
+.shop-now-button:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  opacity: 1;
+  animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
   }
 }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .recommendations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Holiday Color Themes */
+.valentine { background-color: #FF69B4; }
+.patrick { background-color: #2E8B57; }
+.easter { background-color: #9370DB; }
+.mothers { background-color: #FF6347; }
+.fathers { background-color: #4169E1; }
+.independence { background-color: #1E90FF; }
+.halloween { background-color: #FF8C00; }
+.thanksgiving { background-color: #DAA520; }
+.christmas { background-color: #DC143C; }
+.newyears { background-color: #4B0082; }
